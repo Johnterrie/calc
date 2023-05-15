@@ -39,8 +39,25 @@ function changeTheme() {
 function liveScreen(enteredValue) {
   if (!res.value) {
     res.value = "";
-  }
+  } 
   res.value += enteredValue;
+}
+
+
+function liveTan() {
+  res.value = Math.tan(res.value).toFixed(4);
+}
+
+function liveSin() {
+  res.value = Math.sin(res.value).toFixed(4);
+}
+
+function liveCos() {
+  res.value = Math.cos(res.value).toFixed(4);
+}
+
+function liveLog() {
+  res.value = Math.log(res.value).toFixed(4);
 }
 
 //adding event handler on the document to handle keyboard inputs
@@ -104,5 +121,9 @@ function keyboardInputHandler(e) {
     const resultInput = res.value;
     //remove the last element in the string
     res.value = resultInput.substring(0, res.value.length - 1);
+  }
+
+  if (!res.value == "") {
+    res.value = "";
   }
 }
